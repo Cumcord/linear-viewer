@@ -1,5 +1,6 @@
 @import "./normalize.css";
 @import "./windi.css";
+@import "./grid.scss";
 
 @font-face {
     font-family: "Cascadia Mono";
@@ -18,7 +19,10 @@ html {
 }
 
 body {
-    background-color: #424242;
+    --tw-gradient-from: rgba(17, 21, 26, var(--tw-from-opacity, 1));
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0));
+    --tw-gradient-to: rgba(44, 50, 60, var(--tw-to-opacity, 1));
+    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
     color: white;
 }
 
