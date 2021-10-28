@@ -1,6 +1,18 @@
+@media (min-width: 1024px) {
+    .itemgrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .itemgrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
 .itemgrid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 1rem;
     margin-left: 5rem;
     margin-right: 5rem;
