@@ -28,7 +28,9 @@ export default function HomePage({data}: HomePageProps): JSX.Element {
                 {data.linear.issues.nodes.map((issue) => (
                     <div className="griditem">
                         <div className="item-name">{issue.title}</div>
-                        <div className="item-desc">{issue.description}</div>
+                        <div className="item-desc">
+                            {issue.description ? issue.description : <em>No description.</em>}
+                        </div>
                         <div className="item-spacer"></div>
                         <div className="item-footer">{issue.creator!.name}</div>
                     </div>
