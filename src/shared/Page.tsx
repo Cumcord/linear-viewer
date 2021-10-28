@@ -46,7 +46,7 @@ function Meta({title, description, keywords}: MetaProps): JSX.Element {
 function Navigation(): JSX.Element {
     return (
         <div className="navbar grid grid-cols-1 md:grid-cols-3 justify-items-center bg-navbg text-navfg px-24 py-4 shadow-md mb-4">
-            <div>
+            <div className="flex items-center">
                 {/* I promise I would've used a StaticImage here but it just doesn't fucking work. */}
                 <img
                     className="inline h-6 mr-2 rounded"
@@ -70,7 +70,7 @@ function Navigation(): JSX.Element {
                 />*/}
                 back to cumcord
             </a>
-            <a href="https://github.com/Cumcord" target="_blank">
+            <a className="flex items-center" href="https://github.com/Cumcord" target="_blank">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
