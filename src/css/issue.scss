@@ -1,0 +1,83 @@
+.container {
+    width: 75%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 18rem;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    background-color: #273241;
+
+    .issue-meta {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+
+        .issue-meta-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin: 1rem;
+        }
+        .issue-meta-desc {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 1rem;
+        }
+    }
+
+    .issue-data {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        gap: 5rem;
+
+        .issue-data-creator {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 1rem;
+        }
+        .issue-data-creationdate {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 1rem;
+        }
+        .issue-data-assignee {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            align-content: center;
+
+
+            .issue-data-assignee-header {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin: 1rem;
+            }
+            .issue-data-assignee-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+                margin-left: 1rem;
+                font-size: 0.9rem;
+
+                .issue-data-assignee-image {
+                    width: 2rem;
+                    height: 2rem;
+                    margin-right: 0.2rem;
+                    border-radius: 50%;
+                    background-color: rgba(31, 36, 44, 1);
+                }
+            }
+        }
+        .issue-data-labels {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 1rem;
+        }
+    }
+}
