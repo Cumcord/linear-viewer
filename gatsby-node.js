@@ -1,19 +1,18 @@
 // @ts-check
-const {graphql, useStaticQuery} = require("gatsby");
 const path = require("path");
 
 /**
  * @type {import('gatsby').GatsbyNode}
  */
 module.exports = {
-    createPages: async ({actions}) => {
+    createPages: async ({actions, graphql}) => {
         actions.createPage({
             path: "/",
             component: path.resolve("./src/Home.tsx"),
             context: null
         });
 
-        const issuesQueryResult = graphql(`
+        const issuesQueryResult = await graphql(`
             query {
                 linear {
                     issues {
@@ -31,7 +30,7 @@ module.exports = {
         /**
          * @type {GatsbyTypes.Linear_IssueConnection}
          */
-        const issuesConnection = issuesQueryResult.data.issues;
+        const issuesConnection = issuesQueryResult.data.linear.issues;
 
         issuesConnection.nodes.forEach((issue) => {
             actions.createPage({
