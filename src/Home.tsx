@@ -12,6 +12,7 @@ export const query = graphql`
                     creator {
                         name
                     }
+                    identifier
                 }
             }
         }
@@ -27,7 +28,9 @@ export default function HomePage({data}: HomePageProps): JSX.Element {
             <div className="itemgrid">
                 {data.linear.issues.nodes.map((issue) => (
                     <div className="griditem">
-                        <div className="item-name">{issue.title}</div>
+                        <div className="item-name">
+                            <a href={`/issues/${issue.identifier}`}>{issue.title}</a>
+                        </div>
                         <div className="item-desc">
                             {issue.description ? issue.description : <em>No description.</em>}
                         </div>

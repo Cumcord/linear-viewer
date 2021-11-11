@@ -37,6 +37,15 @@
         .item-name {
             font-size: 1.25rem;
             line-height: 1.75rem;
+
+            & > a {
+                color: lightblue;
+                text-decoration: none;
+                &:visited {
+                    color: lightpink;
+                    text-decoration: none;
+                }
+            }
         }
         .item-desc {
             /* Credit: Ducko */
