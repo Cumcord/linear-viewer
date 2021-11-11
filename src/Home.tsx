@@ -9,6 +9,7 @@ export const query = graphql`
                 nodes {
                     title
                     description
+                    completedAt
                     creator {
                         name
                         avatarUrl
@@ -24,14 +25,23 @@ interface HomePageProps {
     data: {linear: {issues: GatsbyTypes.Linear_IssueConnection}};
 }
 export default function HomePage({data}: HomePageProps): JSX.Element {
+    const issues = [...data.linear.issues.nodes].sort((a, b) => {
+        if (a.completedAt) {
+            return 1
+        }
+        if (b.completedAt) {
+            return -1
+        }
+        return 0
+    });
     return (
         <Page>
             <div className="itemgrid">
-                {data.linear.issues.nodes.map((issue) => (
+                {issues.map((issue) => (
                     <div className="griditem">
                         <div className="item-meta">
                             <div className="item-name">
-                                <a href={`/issues/${issue.identifier}`}>{issue.title}</a>
+                                <a className={issue.completedAt ? "striked" : ""} href={`/issues/${issue.identifier}`}>{issue.title}</a>
                             </div>
                             <div className="item-desc">
                                 {issue.description ? issue.description : <em>No description.</em>}
