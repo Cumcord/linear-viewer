@@ -26,37 +26,38 @@
     .griditem {
         display: flex;
         flex-flow: column;
-        gap: 12px;
 
-        padding: 0.5rem;
         min-height: 8rem;
-        border-color: black;
-        border-width: 1px;
+        border: solid 1px black;
         background-color: rgba(31, 36, 44, 1);
 
-        .item-name {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
+        .item-meta {
+            padding: 0.5rem;
 
-            & > a {
-                color: lightblue;
-                text-decoration: none;
-                &:visited {
-                    color: lightpink;
+            .item-name {
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+
+                & > a {
+                    color: lightblue;
                     text-decoration: none;
+                    &:visited {
+                        color: lightpink;
+                        text-decoration: none;
+                    }
                 }
             }
-        }
-        .item-desc {
-            /* Credit: Ducko */
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            .item-desc {
+                /* Credit: Ducko */
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
 
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-            flex-grow: 1;
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+                flex-grow: 1;
+            }
         }
         .item-spacer {
             flex: 1 1 0%;
@@ -67,11 +68,17 @@
             height: 2rem;
             font-size: 0.875rem;
             line-height: 1.25rem;
-            margin: -0.5rem;
-            margin-bottom: -1.2rem;
             margin-top: 1rem;
             padding: 0.5rem;
             background-color: rgba(39, 44, 53, 1);
+
+            .item-footer-image {
+                width: 2rem;
+                height: 2rem;
+                margin-right: 0.5rem;
+                border-radius: 50%;
+                background-color: rgba(31, 36, 44, 1);
+            }
         }
     }
 }
