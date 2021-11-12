@@ -1,5 +1,6 @@
 import React from "react";
 import Page from "./shared/Page";
+import MetaItem from "./shared/IssueMetaItem";
 
 interface IssuePageProps {
     pageContext: {
@@ -15,29 +16,29 @@ export default function IssuePage({pageContext}: IssuePageProps): JSX.Element {
                     <div className="issue-meta-title">{issue.title}</div>
                     <div className="issue-meta-desc">{issue.description}</div>
                 </div>
+
                 <div className="issue-data">
-                    <div className="issue-data-creator">
-                        {issue.creator!.name}
-                    </div>
-                    <div className="issue-data-creationdate">
-                        {issue.createdAt}
-                    </div>
-                    {issue.assignee && (
-                        <div className="issue-data-assignee">
-                            <div className="issue-data-assignee-header">
-                                Assignee
-                            </div>
-                            <div className="issue-data-assignee-content">
-                                <img className="issue-data-assignee-image" src={issue.assignee.avatarUrl} alt={`${issue.assignee.name}'s profile picture`} />
-                                {issue.assignee.name}
-                            </div>
-                        </div>
+                    <MetaItem
+                        header="Creator"
+                        content={issue.creator!.name}
+                        image={issue.creator!.avatarUrl}
+                        imageAlt={`${issue.creator!.name}'s profile picture`}
+                    />
+
+                    <MetaItem header="Creation date" content={new Date(issue.createdAt).toLocaleDateString()} />
+
+                    {issue.assignee ? (
+                        <MetaItem
+                            header="Assignee"
+                            content={issue.assignee.name}
+                            image={issue.assignee.avatarUrl}
+                            imageAlt={`${issue.assignee.name}'s profile picture`}
+                        />
+                    ) : (
+                        <MetaItem header="Assignee" content="Nobody was assigned." />
                     )}
-                    {issue.labels && (
-                        <div className="issue-data-labels">
-                            labels
-                        </div>
-                    )}
+
+                    {/* TODO: map over the labels */}
                 </div>
             </div>
         </Page>

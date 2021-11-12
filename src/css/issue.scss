@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    gap: 18rem;
+    gap: 10rem;
 
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
@@ -14,7 +14,7 @@
     .issue-meta {
         display: flex;
         flex-direction: column;
-        width: 60%;
+        width: 70%;
 
         .issue-meta-title {
             font-size: 1.5rem;
@@ -33,39 +33,28 @@
         display: flex;
         flex-direction: column;
         width: 45%;
-        gap: 5rem;
+        gap: 2rem;
 
-        .issue-data-creator {
-            font-size: 1.2rem;
-            color: #fff;
-            margin: 1rem;
-        }
-        .issue-data-creationdate {
-            font-size: 1.2rem;
-            color: #fff;
-            margin: 1rem;
-        }
-        .issue-data-assignee {
+        .issue-data-item {
             display: flex;
             flex-direction: column;
             color: #fff;
             align-content: center;
 
-
-            .issue-data-assignee-header {
+            .issue-data-item-header {
                 font-size: 1.2rem;
                 font-weight: bold;
                 margin: 1rem;
             }
-            .issue-data-assignee-content {
+            .item-data-item-content {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: 1rem;
+                gap: 0.5rem;
                 margin-left: 1rem;
                 font-size: 0.9rem;
 
-                .issue-data-assignee-image {
+                .issue-data-item-image {
                     width: 2rem;
                     height: 2rem;
                     margin-right: 0.2rem;
@@ -74,6 +63,7 @@
                 }
             }
         }
+
         .issue-data-labels {
             font-size: 1.2rem;
             color: #fff;
@@ -81,3 +71,4 @@
         }
     }
 }
+
