@@ -14,28 +14,39 @@ module.exports = {
 
         const issuesQueryResult = await graphql(`
             query {
-                  linear {
+                linear {
                     issues {
                         nodes {
                             title
                             description
                             createdAt
                             identifier
-            
+
                             assignee {
                                 name
                                 avatarUrl
                             }
-            
+
                             creator {
                                 name
                                 avatarUrl
                             }
-            
+
                             labels {
                                 nodes {
                                     name
                                     color
+                                }
+                            }
+
+                            comments {
+                                nodes {
+                                    body
+                                    createdAt
+                                    user {
+                                        name
+                                        avatarUrl
+                                    }
                                 }
                             }
                         }

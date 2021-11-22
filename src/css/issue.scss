@@ -2,73 +2,116 @@
     width: 75%;
     min-height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 0 auto;
-    gap: 10rem;
+    gap: 2rem;
 
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 
     background-color: #273241;
 
-    .issue-meta {
+    .issue-header {
         display: flex;
-        flex-direction: column;
-        width: 70%;
+        flex-direction: row;
+        gap: 10rem;
 
-        .issue-meta-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-            margin: 1rem;
+        .issue-meta {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+
+            .issue-meta-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #fff;
+                margin: 1rem;
+            }
+            .issue-meta-desc {
+                font-size: 1.2rem;
+                color: #fff;
+                margin: 1rem;
+            }
         }
-        .issue-meta-desc {
-            font-size: 1.2rem;
-            color: #fff;
-            margin: 1rem;
+
+        .issue-data {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            gap: 2rem;
+
+            .issue-data-item {
+                display: flex;
+                flex-direction: column;
+                color: #fff;
+                align-content: center;
+
+                .issue-data-item-header {
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    margin: 1rem;
+                }
+                .item-data-item-content {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin-left: 1rem;
+                    font-size: 0.9rem;
+
+                    .issue-data-item-image {
+                        width: 2rem;
+                        height: 2rem;
+                        margin-right: 0.2rem;
+                        border-radius: 50%;
+                        background-color: rgba(31, 36, 44, 1);
+                    }
+                }
+            }
+
+            .issue-data-labels {
+                font-size: 1.2rem;
+                color: #fff;
+                margin: 1rem;
+            }
         }
     }
 
-    .issue-data {
-        display: flex;
-        flex-direction: column;
-        width: 45%;
-        gap: 2rem;
+    .issue-comments {
+        display: block;
+        width: 60%;
+        margin: 1rem;
 
-        .issue-data-item {
+        .comments-header {
+            font-size: 1.2rem;
+        }
+
+        .comment-container {
             display: flex;
-            flex-direction: column;
-            color: #fff;
-            align-content: center;
+            flex-flow: row nowrap;
+            border-radius: 1rem;
+            background-color: #191f27;
 
-            .issue-data-item-header {
-                font-size: 1.2rem;
-                font-weight: bold;
-                margin: 1rem;
+            margin: 0.5rem;
+            padding: 0.5rem;
+
+            .comment-author-avatar {
+                width: 6rem;
+                height: 6rem;
+                margin-right: 0.2rem;
+                border-radius: 50%;
+                background-color: rgba(31, 36, 44, 1);
             }
-            .item-data-item-content {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 0.5rem;
-                margin-left: 1rem;
-                font-size: 0.9rem;
 
-                .issue-data-item-image {
-                    width: 2rem;
-                    height: 2rem;
-                    margin-right: 0.2rem;
-                    border-radius: 50%;
-                    background-color: rgba(31, 36, 44, 1);
+            .comment-content {
+                margin: 0 1rem;
+
+                .comment-author-name {
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    color: #fff;
                 }
             }
         }
-
-        .issue-data-labels {
-            font-size: 1.2rem;
-            color: #fff;
-            margin: 1rem;
-        }
     }
 }
-
